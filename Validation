@@ -27,7 +27,8 @@ def PasswordCreation():
         any(char.islower() for char in password)
         any(char.isnumeric() for char in password)
         print("  ")
-        print("Password accepted")
+        print("Password accepted.")
+        print(PhoneNumberCheck())
     else:
         print("  ")
         print("Somthing seems to be wrong.")
@@ -40,12 +41,12 @@ def PasswordCreation():
     
 
 
-
 def PhoneNumberCheck():
     
+    print("  ")
     PhoneNumber = input("What is you Phone number?")
 
-    if PhoneNumber.isdigit()==True :
+    if PhoneNumber.isnumeric()==True :
         print("Thank you.")
         print("        ")
     else:
@@ -53,14 +54,32 @@ def PhoneNumberCheck():
         print("        ")
 
 
+
+
 def UserNameCreation():
 
-    usename = input("Enter a username")
+    username = input("Enter a username")
 
+    if len(username) < 5:
+        print("  ")
+        print("Somthing seems to be wrong.")
+        print("  ")
+        print("Please try again")
 
+    elif  str.isalnum(username)== False:
+        print("  ")
+        print("Somthing seems to be wrong.")
+        print("  ")
+        print("Please try again")
+        print(UserNameCreation())
+    else:
+        print("  ")
+        print("Username accepted.")
+        print("  ")
+        print(PasswordCreation())
 
 
 
 #---------------- Main code----------------#
 
-print(PasswordCreation())
+print(UserNameCreation())
