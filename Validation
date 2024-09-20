@@ -5,17 +5,35 @@
 #---------------- Subprograms ----------------#
 
 def PasswordCreation():
+
+    print("            ")
+    print("            ")
+    print("Please create a passoword that has: ")
+    print("            ")
+    print(" > At least 8 characters ")
+    print("            ")
+    print(" > A capital letter in it ")
+    print("            ")
+    print(" > A number in it ")
+    print("            ")
+
     
-    while True:
-        password = input("Enter a password: ")
-        if len(password) < 8:
-            print("Make sure your password is at lest 8 letters")
-        elif not password.isdigit():
-            print("Make sure your password has a number in it")
-        elif not password.isupper(): 
-            print("Make sure your password has a capital letter in it")
-        else:
-            print("Your password seems fine")
+    password = input("Enter a password: ")
+    if len(password) < 8:
+        print("            ")
+        print("Make sure your password is at least 8 charachters long.")
+        print(PasswordCreation())
+    elif any(char.isupper() for char in password):
+        any(char.islower() for char in password)
+        any(char.isnumeric() for char in password)
+        print("  ")
+        print("Password accepted")
+    else:
+        print("  ")
+        print("Somthing seems to be wrong.")
+        print("  ")
+        print("Please try again")
+        print(PasswordCreation())
 
         return password
 
@@ -33,7 +51,11 @@ def PhoneNumberCheck():
     else:
         print("Please only input valid numbers.")
         print("        ")
-        
+
+
+def UserNameCreation():
+
+    usename = input("Enter a username")
 
 
 
